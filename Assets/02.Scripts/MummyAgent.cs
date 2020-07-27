@@ -68,7 +68,20 @@ public class MummyAgent : Agent
 #endregion
 
 #region UNITY_CALLBACK
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("TARGET"))
+        {
+            SetReward(+1.0f);
+            EndEpisode();
+        }
 
+        if (coll.collider.CompareTag("DEAD_ZONE"))
+        {
+            SetReward(-1.0f);
+            EndEpisode();
+        }
+    }
 #endregion
 
 #region USER_DEFINE_FUNCS
