@@ -41,7 +41,20 @@ public class MummyRay : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
+        Vector3 dir = Vector3.zero;
+        Vector3 rot = Vector3.zero;
 
+        switch ((int)vectorAction[0])
+        {
+            case 1: dir = transform.forward; break;
+            case 2: dir = -transform.forward; break;
+        }
+
+        switch ((int)vectorAction[1])
+        {
+            case 1: rot = -transform.up; break;
+            case 2: rot = transform.up; break;
+        }
     }
 
     public override void Heuristic(float[] actionsOut)
