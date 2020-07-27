@@ -9,6 +9,12 @@ public class MummyAgent : Agent
     private Transform tr;       //에이젼트의 Transform
     private Rigidbody rb;
 
+    public MeshRenderer floor;
+    public Material rightMt;
+    public Material wrongMt;
+
+    private Material originMt;
+
 #region MLAGENT_CALLBACK
 
     //에이전트 초기화
@@ -16,6 +22,7 @@ public class MummyAgent : Agent
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
+        originMt = floor.material;
     }
 
     //학습을 시작할때(에피소드) 마다 호출되는 함수
@@ -32,7 +39,9 @@ public class MummyAgent : Agent
 
         targetTr.localPosition = new Vector3(Random.Range(-4.0f, 4.0f)
                                             , 0.55f
-                                            , Random.Range(-4.0f, 4.0f));                             
+                                            , Random.Range(-4.0f, 4.0f));   
+
+        StartCoroutine(RevertMaterial());                          
     }
 
     //주변환경을 관찰할 때 호출
@@ -73,19 +82,23 @@ public class MummyAgent : Agent
         if (coll.collider.CompareTag("TARGET"))
         {
             SetReward(+1.0f);
+            floor.material = rightMt;
             EndEpisode();
         }
 
         if (coll.collider.CompareTag("DEAD_ZONE"))
         {
             SetReward(-1.0f);
+            floor.material = wrongMt;
             EndEpisode();
         }
     }
-#endregion
 
-#region USER_DEFINE_FUNCS
-
+    IEnumerator RevertMaterial()
+    {
+        yield return new WaitForSeconds(0.3f);
+        floor.material = originMt;
+    }
 #endregion
 
 }

@@ -325,6 +325,9 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 1000
   targetTr: {fileID: 617494262}
+  floor: {fileID: 2092448082}
+  rightMt: {fileID: 2100000, guid: 5c59bd36def9a4684be49a21cf201a2d, type: 2}
+  wrongMt: {fileID: 2100000, guid: 88b9ae7af2c1748a0a1f63407587a601, type: 2}
 --- !u!114 &1763054151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +366,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
+--- !u!23 &2092448082 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4856993818687799485, guid: ce399bfa8105a4ddc926847d20fa5535,
+    type: 3}
+  m_PrefabInstance: {fileID: 4856993820641835503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4856993820641835503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,9 +379,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 617494261, guid: ce399bfa8105a4ddc926847d20fa5535, type: 3}
+      propertyPath: m_TagString
+      value: TARGET
+      objectReference: {fileID: 0}
     - target: {fileID: 617494262, guid: ce399bfa8105a4ddc926847d20fa5535, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856993818716731614, guid: ce399bfa8105a4ddc926847d20fa5535,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4856993818879080333, guid: ce399bfa8105a4ddc926847d20fa5535,
         type: 3}
@@ -448,6 +466,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stage01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856993820300798390, guid: ce399bfa8105a4ddc926847d20fa5535,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856993820545102937, guid: ce399bfa8105a4ddc926847d20fa5535,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856993820631439457, guid: ce399bfa8105a4ddc926847d20fa5535,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce399bfa8105a4ddc926847d20fa5535, type: 3}
