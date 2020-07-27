@@ -46,13 +46,28 @@ public class MummyRay : Agent
 
     public override void Heuristic(float[] actionsOut)
     {
-        actionsOut[0] = 0.0f; //W, S (전/후)
-        actionsOut[1] = 0.0f; //A, D (좌/우)
+        actionsOut[0] = 0.0f; //W, S (전/후) 1 , 2
+        actionsOut[1] = 0.0f; //A, D (좌/우) 1 , 2
 
         //전진
         if (Input.GetKey(KeyCode.W))
         {
             actionsOut[0] = 1.0f;
+        }
+        //후진
+        if (Input.GetKey(KeyCode.S))
+        {
+            actionsOut[0] = 2.0f;
+        }
+        //왼쪽 회전
+        if (Input.GetKey(KeyCode.A))
+        {
+            actionsOut[1] = 1.0f;
+        }
+        //오른쪽 회전
+        if (Input.GetKey(KeyCode.D))
+        {
+            actionsOut[1] = 2.0f;
         }
     }
 }
