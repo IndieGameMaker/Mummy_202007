@@ -55,6 +55,9 @@ public class MummyRay : Agent
             case 1: rot = -transform.up; break;
             case 2: rot = transform.up; break;
         }
+
+        rb.AddForce(dir * moveSpeed, ForceMode.VelocityChange);
+        transform.Rotate(rot, Time.fixedDeltaTime * turnSpeed);
     }
 
     public override void Heuristic(float[] actionsOut)
