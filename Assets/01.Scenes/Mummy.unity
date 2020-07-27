@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &617494262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 617494262, guid: ce399bfa8105a4ddc926847d20fa5535,
+    type: 3}
+  m_PrefabInstance: {fileID: 4856993820641835503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +302,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1763054146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4856993818878782381, guid: ce399bfa8105a4ddc926847d20fa5535,
+    type: 3}
+  m_PrefabInstance: {fileID: 4856993820641835503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763054147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763054146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7c41084c3144e50b16464b43de7bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 1000
+  targetTr: {fileID: 617494262}
+--- !u!114 &1763054151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763054146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 8
+    NumStackedVectorObservations: 1
+    VectorActionSize: 01000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: Mummy
+  TeamId: 0
+  m_UseChildSensors: 1
 --- !u!1001 &4856993820641835503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,6 +356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 617494262, guid: ce399bfa8105a4ddc926847d20fa5535, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4856993818879080333, guid: ce399bfa8105a4ddc926847d20fa5535,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,6 +369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856993818879080333, guid: ce399bfa8105a4ddc926847d20fa5535,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4856993820206405656, guid: ce399bfa8105a4ddc926847d20fa5535,
         type: 3}
