@@ -21,7 +21,7 @@ public class StageManager : MonoBehaviour
         MakeItems();
     }
 
-    void MakeItems()
+    public void MakeItems()
     {
         foreach (var obj in goodList)
         {
