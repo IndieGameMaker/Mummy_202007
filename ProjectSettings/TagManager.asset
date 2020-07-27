@@ -29,6 +29,9 @@ TagManager:
   - food
   - DEAD_ZONE
   - TARGET
+  - WALL
+  - GOOD_ITEM
+  - BAD_ITEM
   layers:
   - Default
   - TransparentFX
