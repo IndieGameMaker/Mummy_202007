@@ -97,8 +97,8 @@ public class MummyRay : Agent
         {
             SetReward(+1.0f);
             Destroy(coll.gameObject);
-            floor.GetComponent<Renderer>().material = goodMt;
-            Invoke("RevertMaterial", 0.3f);
+            //floor.GetComponent<Renderer>().material = goodMt;
+            //Invoke("RevertMaterial", 0.3f);
         }
 
         if (coll.collider.CompareTag("BAD_ITEM"))
@@ -106,8 +106,8 @@ public class MummyRay : Agent
             SetReward(-1.0f);
             Destroy(coll.gameObject);
             EndEpisode();
-            floor.GetComponent<Renderer>().material = badMt;
-            Invoke("RevertMaterial", 0.3f);
+            //floor.GetComponent<Renderer>().material = badMt;
+            //Invoke("RevertMaterial", 0.3f);
         }
 
         if (coll.collider.CompareTag("WALL"))
