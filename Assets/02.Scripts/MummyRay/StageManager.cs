@@ -43,6 +43,7 @@ public class StageManager : MonoBehaviour
             Vector3 pos = new Vector3( Random.Range(-23.0f, 23.0f)
                                      , 0.55f
                                      , Random.Range(-23.0f, 23.0f));
+            pos = transform.localPosition + pos;
             GameObject obj = Instantiate(goodPrefab, pos, Quaternion.identity);
             goodList.Add(obj);
         }
@@ -53,6 +54,7 @@ public class StageManager : MonoBehaviour
             Vector3 pos = new Vector3( Random.Range(-23.0f, 23.0f)
                                      , 0.55f
                                      , Random.Range(-23.0f, 23.0f));
+            pos = transform.localPosition + pos;                                     
             GameObject obj = Instantiate(badPrefab, pos, Quaternion.identity);
             badList.Add(obj);
         }        

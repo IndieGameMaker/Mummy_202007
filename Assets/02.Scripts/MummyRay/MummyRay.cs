@@ -109,6 +109,11 @@ public class MummyRay : Agent
             floor.GetComponent<Renderer>().material = badMt;
             Invoke("RevertMaterial", 0.3f);
         }
+
+        if (coll.collider.CompareTag("WALL"))
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     void RevertMaterial()
