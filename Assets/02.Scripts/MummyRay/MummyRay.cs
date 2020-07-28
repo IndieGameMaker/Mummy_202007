@@ -12,6 +12,9 @@ public class MummyRay : Agent
     public float moveSpeed = 2.0f;
     public float turnSpeed = 300.0f;
 
+    public Material goodMt;
+    public Material badMt;
+
     private Material originMt;
 
     public override void Initialize()
@@ -85,5 +88,30 @@ public class MummyRay : Agent
         {
             actionsOut[1] = 2.0f;
         }
+    }
+
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("GOOD_ITEM"))
+        {
+            SetReward(+1.0f);
+            Destroy(coll.gameObject);
+            floor.GetComponent<Renderer>().material = goodMt;
+            Invoke("RevertMaterial", 0.3f);
+        }
+
+        if (coll.collider.CompareTag("BAD_ITEM"))
+        {
+            SetReward(-1.0f);
+            Destroy(coll.gameObject);
+            EndEpisode();
+            floor.GetComponent<Renderer>().material = badMt;
+        }
+    }
+
+    void RevertMaterial()
+    {
+        floor.GetComponent<Renderer>().material = originMt;
     }
 }
