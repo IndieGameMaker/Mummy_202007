@@ -49,14 +49,14 @@ public class MummyRay : Agent
 
         switch ((int)vectorAction[0])
         {
-            case 1: dir = transform.forward; break;
-            case 2: dir = -transform.forward; break;
+            case 0: dir = transform.forward; break;
+            case 1: dir = -transform.forward; break;
         }
 
         switch ((int)vectorAction[1])
         {
-            case 1: rot = -transform.up; break;
-            case 2: rot = transform.up; break;
+            case 0: rot = -transform.up; break;
+            case 1: rot = transform.up; break;
         }
 
         rb.AddForce(dir * moveSpeed, ForceMode.VelocityChange);
@@ -65,28 +65,29 @@ public class MummyRay : Agent
 
     public override void Heuristic(float[] actionsOut)
     {
-        actionsOut[0] = 0.0f; //W, S (전/후) 1 , 2
-        actionsOut[1] = 0.0f; //A, D (좌/우) 1 , 2
+        actionsOut[0] = 0.0f; //W, S (전/후) 0 , 1
+        actionsOut[1] = 0.0f; //A, D (좌/우) 0 , 1
 
         //전진
         if (Input.GetKey(KeyCode.W))
         {
-            actionsOut[0] = 1.0f;
+            actionsOut[0] = 0.0f;
         }
         //후진
         if (Input.GetKey(KeyCode.S))
         {
-            actionsOut[0] = 2.0f;
+            actionsOut[0] = 1.0f;
         }
+        
         //왼쪽 회전
         if (Input.GetKey(KeyCode.A))
         {
-            actionsOut[1] = 1.0f;
+            actionsOut[1] = 0.0f;
         }
         //오른쪽 회전
         if (Input.GetKey(KeyCode.D))
         {
-            actionsOut[1] = 2.0f;
+            actionsOut[1] = 1.0f;
         }
     }
 
