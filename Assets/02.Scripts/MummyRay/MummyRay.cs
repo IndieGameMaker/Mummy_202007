@@ -107,6 +107,7 @@ public class MummyRay : Agent
             Destroy(coll.gameObject);
             EndEpisode();
             floor.GetComponent<Renderer>().material = badMt;
+            Invoke("RevertMaterial", 0.3f);
         }
     }
 
